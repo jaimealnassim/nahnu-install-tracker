@@ -63,9 +63,9 @@ class NIT_WP_Version {
 			} else {
 				$results[ $slug ] = array(
 					'slug'         => $slug,
-					'name'         => isset( $response->name )         ? sanitize_text_field( $response->name )         : $slug,
-					'version'      => isset( $response->version )      ? sanitize_text_field( $response->version )      : '',
-					'last_updated' => isset( $response->last_updated ) ? sanitize_text_field( $response->last_updated ) : '',
+					'name'         => isset( $response->name )         ? sanitize_text_field( $response->name )                           : $slug,
+					'version'      => isset( $response->version )      ? preg_replace( '/^[vV]+/', '', sanitize_text_field( $response->version ) )         : '',
+					'last_updated' => isset( $response->last_updated ) ? sanitize_text_field( $response->last_updated )                   : '',
 					'fetch_error'  => '',
 					'fetched_at'   => current_time( 'mysql' ),
 				);

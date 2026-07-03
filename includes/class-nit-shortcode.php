@@ -3,7 +3,7 @@
  * NIT_Shortcode — all frontend shortcodes.
  *
  * [nit_installs slug="..."]    — WP.org active install count, e.g. "10,000+"
- * [nit_wp_version slug="..."]  — WP.org plugin version, e.g. "2.1.4"
+ * [nit_wp_version slug="..."]  — WP.org plugin version, e.g. "1.0.0.0"
  * [nit_gh_version id="..."]    — GitHub version, e.g. "1.0.3"
  *
  * All shortcodes return plain text only — no wrapper HTML.
@@ -59,7 +59,8 @@ class NIT_Shortcode {
 	/**
 	 * [nit_wp_version slug="plugin-slug"]
 	 *
-	 * Returns the current WP.org plugin version string, e.g. "2.1.4".
+	 * Returns the current WP.org plugin version number only, e.g. "1.0.0.0".
+	 * Strips any leading non-numeric characters (e.g. "v1.0.0" becomes "1.0.0").
 	 *
 	 * @param array|string $atts Shortcode attributes.
 	 * @return string
@@ -73,16 +74,24 @@ class NIT_Shortcode {
 		}
 
 		$data = get_option( NIT_OPTION_WP_DATA, array() );
+
 		if ( ! is_array( $data ) || ! array_key_exists( $slug, $data ) ) {
 			return '';
 		}
 
 		$entry = $data[ $slug ];
-		if ( ! empty( $entry['fetch_error'] ) || empty( $entry['version'] ) ) {
+
+		if ( ! empty( $entry['fetch_error'] ) ) {
 			return '';
 		}
 
-		return esc_html( $entry['version'] );
+		$raw = isset( $entry['version'] ) ? (string) $entry['version'] : '';
+
+		if ( '' === $raw ) {
+			return '';
+		}
+
+		return esc_html( $raw );
 	}
 
 	/**
@@ -112,6 +121,6 @@ class NIT_Shortcode {
 			return '';
 		}
 
-		return esc_html( $entry['version'] );
+		return esc_html( (string) $entry['version'] );
 	}
 }

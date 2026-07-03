@@ -2,9 +2,9 @@
 Contributors:      ja1me4
 Tags:              plugin stats, install count, version tracker, wordpress.org, github
 Requires at least: 6.0
-Tested up to:      6.7
+Tested up to:      7.0
 Requires PHP:      7.4
-Stable tag:        1.1.0
+Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,20 +89,10 @@ The `id` is your label lowercased with spaces replaced by hyphens. For example, 
 
 == Changelog ==
 
-= 1.1.0 =
-* Added WP.org Version Tracker tab with `[nit_wp_version]` shortcode.
-* Added GitHub Version Tracker tab supporting Releases API and raw JSON file URLs.
-* Added Fetch Settings tab with configurable auto-fetch frequency (1, 6, 12, 24 hours).
-* Tabbed admin interface.
-* `Fewer than 10` now shown correctly for new plugins instead of `0+`.
-
 = 1.0.0 =
-* Initial release — WP.org active install count tracker with `[nit_installs]` shortcode.
+* Initial release.
 
 == Upgrade Notice ==
-
-= 1.1.0 =
-New tabs for WP.org version tracking and GitHub version tracking. No database changes — safe to upgrade.
 
 = 1.0.0 =
 Initial release. No upgrade steps required.

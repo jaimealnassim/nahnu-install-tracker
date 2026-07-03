@@ -442,9 +442,13 @@ class NIT_Admin {
 						</tbody>
 					</table>
 					<hr>
-					<h3><?php esc_html_e( 'Shortcode', 'nahnu-install-tracker' ); ?></h3>
-					<code>[nit_wp_version slug="nahnu-asset-scanner"]</code>
-					<p class="description"><?php esc_html_e( 'Outputs the bare version number, e.g. 2.1.4', 'nahnu-install-tracker' ); ?></p>
+					<h3><?php esc_html_e( 'Shortcodes', 'nahnu-install-tracker' ); ?></h3>
+					<?php foreach ( $data as $slug => $info ) : ?>
+						<?php if ( ! empty( $info['fetch_error'] ) ) : continue; endif; ?>
+						<p style="margin:4px 0">
+							<code>[nit_wp_version slug="<?php echo esc_attr( $slug ); ?>"]</code>
+						</p>
+					<?php endforeach; ?>
 				<?php endif; ?>
 			</div>
 		</div>
