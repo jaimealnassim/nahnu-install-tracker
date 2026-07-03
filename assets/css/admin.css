@@ -1,0 +1,178 @@
+/* Nahnu Install Tracker — Admin styles */
+
+.nit-wrap h1 {
+	margin-bottom: 0.5rem;
+}
+
+/* Tabs */
+.nit-tabs {
+	margin-bottom: 0;
+}
+
+.nit-tab-content {
+	background: transparent;
+	padding-top: 20px;
+}
+
+/* Grid layout */
+.nit-grid {
+	display: grid;
+	grid-template-columns: 360px 1fr;
+	gap: 20px;
+	align-items: start;
+}
+
+@media ( max-width: 960px ) {
+	.nit-grid { grid-template-columns: 1fr; }
+}
+
+/* Card */
+.nit-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 20px 24px;
+}
+
+.nit-card h2 {
+	margin-top: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	border-bottom: 1px solid #f0f0f1;
+	padding-bottom: 10px;
+	margin-bottom: 14px;
+}
+
+.nit-card h3 {
+	font-size: 0.875rem;
+	margin-bottom: 6px;
+}
+
+.nit-card .description {
+	color: #646970;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+.nit-card hr {
+	border: none;
+	border-top: 1px solid #f0f0f1;
+	margin: 18px 0;
+}
+
+/* Tables */
+.nit-table th,
+.nit-table td {
+	padding: 8px 10px;
+	font-size: 13px;
+}
+
+.nit-count {
+	font-weight: 700;
+	color: #135e96;
+}
+
+.nit-delta        { font-size: 12px; color: #646970; }
+.nit-up           { color: #00a32a; font-weight: 600; }
+.nit-down         { color: #d63638; font-weight: 600; }
+.nit-error        { color: #d63638; font-size: 12px; }
+
+/* GitHub sources form — full width above the grid */
+.nit-gh-form-card {
+	margin-bottom: 20px;
+}
+
+.nit-gh-url-hints {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px 24px;
+	background: #f6f7f7;
+	border-left: 3px solid #dcdcde;
+	padding: 8px 14px;
+	margin-bottom: 16px;
+	font-size: 12px;
+	line-height: 1.8;
+}
+
+.nit-gh-url-hints code {
+	background: transparent !important;
+	font-size: 11px;
+}
+
+/* GitHub entry table */
+.nit-gh-table {
+	table-layout: fixed;
+	margin-bottom: 0;
+}
+
+.nit-gh-table thead th,
+.nit-gh-table tbody td {
+	padding: 7px 8px;
+	vertical-align: middle;
+}
+
+.nit-col-label  { width: 180px; }
+.nit-col-key    { width: 120px; }
+.nit-col-remove { width: 44px;  }
+
+/* Make all inputs fill their cell */
+.nit-gh-table input.widefat {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.nit-gh-actions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.nit-gh-actions .button-primary {
+	margin: 0;
+}
+
+.nit-remove-row {
+	padding: 0 8px !important;
+	height: 28px !important;
+	line-height: 26px !important;
+	font-size: 16px !important;
+	color: #d63638 !important;
+	border-color: #d63638 !important;
+}
+
+/* Bottom grid for GH tab: results card wider than refresh card */
+.nit-gh-bottom {
+	grid-template-columns: 1fr 320px;
+	margin-top: 0;
+}
+
+/* Interval frequency row */
+.nit-interval-form {
+	margin-bottom: 0;
+}
+
+.nit-interval-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 6px;
+}
+
+.nit-interval-row select {
+	flex: 1;
+}
+
+.nit-interval-row .button {
+	white-space: nowrap;
+}
+
+/* Shortcode reference */
+.nit-card code {
+	display: inline-block;
+	background: #f0f0f1;
+	padding: 3px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-bottom: 4px;
+}
